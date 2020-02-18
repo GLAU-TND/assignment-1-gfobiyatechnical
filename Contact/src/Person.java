@@ -8,39 +8,11 @@ public class Person {
     private String anotherE_mailAddress;
     private String e_mailAddress;
 
-    public static int welcomeContactScreen() {
-        int userPressed = 0;
-        Scanner scan = new Scanner(System.in);
-        System.out.println("\t\tWelcome to Rakesh's Contact List App\n" +
-                "Press 1 to add a new contact\n" +
-                "Press 2 to view all contacts\n" +
-                "Press 3 to search for a contact\n" +
-                "Press 4 to delete a contact\n" +
-                "Press 5 to exit program \n");
-        try {
-            userPressed = scan.nextInt();
-            if (userPressed == 1) {
-
-
-            } else if (userPressed == 2) {
-
-            } else if (userPressed == 3) {
-
-            } else if (userPressed == 4) {
-
-            } else if (userPressed == 5) {
-
-            }
-        } catch (Exception e) {
-            System.out.println("Please Check Your Input :" + e);
-        }
-        return userPressed;
-    }
-
     public String getFirstName() {
         Scanner scanner = new Scanner(System.in);
+        System.out.print(firstName = "First Name: ");
         String temp = scanner.next();
-        firstName = "First Name: " + temp;
+        firstName += temp;
         return firstName;
     }
 
@@ -56,7 +28,10 @@ public class Person {
             option = scanner.next();
             if (option.equalsIgnoreCase("y"))
                 anotherContactNumber = getContactNumber();
-            else anotherContactNumber = null;
+            else {
+                anotherContactNumber = null;
+                break;
+            }
         } while (option.equalsIgnoreCase("y"));
         return anotherContactNumber;
     }
@@ -73,7 +48,10 @@ public class Person {
             option = scanner.next();
             if (option.equalsIgnoreCase("y"))
                 anotherContactNumber = getE_mailAddress();
-            else anotherE_mailAddress = null;
+            else {
+                anotherE_mailAddress = null;
+                break;
+            }
         } while (option.equalsIgnoreCase("y"));
         return anotherE_mailAddress;
     }
@@ -84,7 +62,9 @@ public class Person {
 
     public String getLastName() {
         Scanner scanner = new Scanner(System.in);
-        lastName = "Last Name: " + scanner.next();
+        System.out.print(lastName = "Last Name: ");
+        String temp = scanner.next();
+        lastName += temp;
         return lastName;
     }
 
@@ -94,7 +74,9 @@ public class Person {
 
     public String getContactNumber() {
         Scanner scanner = new Scanner(System.in);
-        contactNumber = "Contact Number: " + scanner.next();
+        System.out.print(contactNumber = "Contact Number: ");
+        String temp = scanner.next();
+        contactNumber += temp;
         return contactNumber;
     }
 
@@ -104,21 +86,13 @@ public class Person {
 
     public String getE_mailAddress() {
         Scanner scanner = new Scanner(System.in);
-        contactNumber = "Email Address: " + scanner.next();
+        System.out.print(e_mailAddress = "Email Address: ");
+        String temp = scanner.next();
+        e_mailAddress += temp;
         return e_mailAddress;
     }
 
     public void setE_mailAddress(String e_mailAddress) {
         this.e_mailAddress = e_mailAddress;
-    }
-
-    public void addContact() {
-        System.out.println("You have chosen to add a new contact: \n" +
-                "Please enter the name of the Person");
-        getFirstName();
-        getLastName();
-        getContactNumber();
-        getAnotherContactNumber();
-        getAnotherE_mailAddress();
     }
 }
