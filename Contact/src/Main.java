@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Main extends ContactsList {
-
+public class Main extends Person {
     public static void main(String[] args) {
         Main myObj = new Main();
         myObj.welcomeContactScreen();
@@ -41,15 +40,7 @@ public class Main extends ContactsList {
     public void addContact() {
         System.out.println("You have chosen to add a new contact: \n" +
                 "Please enter the name of the Person");
-        openFile();
-        addRecord();
-        closeFile();
-        /*
-        getFirstName();
-        getLastName();
-        getContactNumber();
-        getAnotherContactNumber();
-        getAnotherE_mailAddress();*/
+
     }
 
     public void viewContactsList() {

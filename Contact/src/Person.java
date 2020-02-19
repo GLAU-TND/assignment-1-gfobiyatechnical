@@ -1,6 +1,6 @@
-import java.util.Scanner;
-
-public class Person {
+class Person<String> {
+    private Node<String> head = null;
+    private int size = 0;
     private String firstName;
     private String lastName;
     private String contactNumber;
@@ -8,91 +8,81 @@ public class Person {
     private String anotherE_mailAddress;
     private String e_mailAddress;
 
-    public String getFirstName() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(firstName = "First Name: ");
-        String temp = scanner.next();
-        firstName += temp;
-        return firstName;
+
+    private static class Node<String> {
+        private Node<String> next;
+        private String firstName;
+        private String lastName;
+        private String contactNumber;
+        private String anotherContactNumber;
+        private String anotherE_mailAddress;
+        private String e_mailAddress;
+
+        public Node(String firstName, String lastName, String contactNumber, String anotherContactNumber, String anotherE_mailAddress, String e_mailAddress) {
+
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.contactNumber = contactNumber;
+            this.anotherContactNumber = anotherContactNumber;
+            this.anotherE_mailAddress = anotherE_mailAddress;
+            this.e_mailAddress = e_mailAddress;
+        }
+
+        public Node<String> getNext() {
+            return next;
+        }
+
+        public void setNext(Node<String> next) {
+            this.next = next;
+        }
+
+        public String getFirstName() {
+            return firstName;
+        }
+
+        public void setFirstName(String firstName) {
+            this.firstName = firstName;
+        }
+
+        public String getLastName() {
+            return lastName;
+        }
+
+        public void setLastName(String lastName) {
+            this.lastName = lastName;
+        }
+
+        public String getContactNumber() {
+            return contactNumber;
+        }
+
+        public void setContactNumber(String contactNumber) {
+            this.contactNumber = contactNumber;
+        }
+
+        public String getAnotherContactNumber() {
+            return anotherContactNumber;
+        }
+
+        public void setAnotherContactNumber(String anotherContactNumber) {
+            this.anotherContactNumber = anotherContactNumber;
+        }
+
+        public String getAnotherE_mailAddress() {
+            return anotherE_mailAddress;
+        }
+
+        public void setAnotherE_mailAddress(String anotherE_mailAddress) {
+            this.anotherE_mailAddress = anotherE_mailAddress;
+        }
+
+        public String getE_mailAddress() {
+            return e_mailAddress;
+        }
+
+        public void setE_mailAddress(String e_mailAddress) {
+            this.e_mailAddress = e_mailAddress;
+        }
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getAnotherContactNumber() {
-        String option;
-        Scanner scanner = new Scanner(System.in);
-        do {
-            System.out.print("Would you like to add another contact number? (y/n): ");
-            option = scanner.next();
-            if (option.equalsIgnoreCase("y"))
-                anotherContactNumber = getContactNumber();
-            else {
-                anotherContactNumber = null;
-                break;
-            }
-        } while (option.equalsIgnoreCase("y"));
-        return anotherContactNumber;
-    }
-
-    public void setAnotherContactNumber(String anotherContactNumber) {
-        this.anotherContactNumber = anotherContactNumber;
-    }
-
-    public String getAnotherE_mailAddress() {
-        String option;
-        Scanner scanner = new Scanner(System.in);
-        do {
-            System.out.print("Would you like to add email address? (y/n): ");
-            option = scanner.next();
-            if (option.equalsIgnoreCase("y"))
-                anotherContactNumber = getE_mailAddress();
-            else {
-                anotherE_mailAddress = null;
-                break;
-            }
-        } while (option.equalsIgnoreCase("y"));
-        return anotherE_mailAddress;
-    }
-
-    public void setAnotherE_mailAddress(String anotherE_mailAddress) {
-        this.anotherE_mailAddress = anotherE_mailAddress;
-    }
-
-    public String getLastName() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(lastName = "Last Name: ");
-        String temp = scanner.next();
-        lastName += temp;
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public String getContactNumber() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(contactNumber = "Contact Number: ");
-        String temp = scanner.next();
-        contactNumber += temp;
-        return contactNumber;
-    }
-
-    public void setContactNumber(String contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public String getE_mailAddress() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print(e_mailAddress = "Email Address: ");
-        String temp = scanner.next();
-        e_mailAddress += temp;
-        return e_mailAddress;
-    }
-
-    public void setE_mailAddress(String e_mailAddress) {
-        this.e_mailAddress = e_mailAddress;
-    }
 }
