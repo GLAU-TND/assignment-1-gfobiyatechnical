@@ -1,9 +1,9 @@
 import java.io.Serializable;
 /*
 author : Rakesh Yadav
-
  */
-
+@SuppressWarnings("serial")
+        //to ignore specified compiler warning in annotated element
 class Person implements Serializable {
 
     private String firstName;
