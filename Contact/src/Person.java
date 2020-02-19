@@ -1,9 +1,13 @@
 import java.io.Serializable;
-/*
-author : Rakesh Yadav
- */
+/**
+ * @Author : Rakesh Yadav
+ **/
+
+/**
+ * create serialization so files can be written and read in byte form
+ * @SuppressWarnings() - to ignore specified compiler warning in annotated element
+ **/
 @SuppressWarnings("serial")
-        //to ignore specified compiler warning in annotated element
 class Person implements Serializable {
 
     private String firstName;
