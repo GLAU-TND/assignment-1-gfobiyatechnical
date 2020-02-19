@@ -75,4 +75,9 @@ class Person implements Serializable {
     public void setNext(Person next) {
         this.next = next;
     }
+
+    // toString method @Override
+    public String toString() {
+        return "First Name: " + firstName + "Last Name: " + lastName + "Contact Number: " + contactNumber + " " + anotherContactNumber + "Email Address: " + e_mailAddress + " " + getAnotherE_mailAddress();
+    }
 }
