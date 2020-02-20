@@ -1,15 +1,16 @@
 /*
  *   @Author: Rakesh Yadav
  */
-
 import java.io.Serializable;
-
 @SuppressWarnings("serial")
+
 public class ContactsList implements Serializable {
     private Person head;
     private int contactLintLength;
 
-    //initialize contactsList
+    /*
+     *   initialize of instance for contactsList
+     */
     public ContactsList() {
         head = null;
         contactLintLength = 0;
@@ -55,19 +56,19 @@ public class ContactsList implements Serializable {
                         contactLintLength++;
                         break;
                     }
-                    /**
+                    /*
                      *   this section cycles through the "body" of the nodes if
                      *   it's not the tail
-                     **/
+                     */
                     previous.setNext(newNode);
                     newNode.setNext(current);
                     contactLintLength++;
                     break;
                 } else
-                /**
-                 *  if the entry replaces node at the tail,
-                 *  this entry becomes the new tail
-                 **/ {
+                    /*
+                     *  if the entry replaces node at the tail,
+                     *  this entry becomes the new tail
+                     */ {
                     if (current.getNext() == null) {
                         current.setNext(newNode);
                         newNode.setNext(null);
@@ -96,13 +97,14 @@ public class ContactsList implements Serializable {
         if (head == null) {
             System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
-            System.out.println("-------- * -------- * -------- * --------");
             for (int i = 0; i < contactLintLength; i++) {
-                System.out.print("Index = " + (i + 1) + " ");
+                System.out.println("-------- * -------- * -------- * --------");
+                //System.out.print("Contact No. " + (i + 1));
                 System.out.println(tempNode);
                 tempNode = tempNode.getNext();
+                System.out.println("-------- * -------- * -------- * --------");
             }
-            System.out.println("-------- * -------- * -------- * --------");
+
         }
         System.out.println();
     }
@@ -113,14 +115,16 @@ public class ContactsList implements Serializable {
     public void searchByFirstName(String firstName) {
         Person current = head;
         boolean empty = true;
-
         if (isEmpty()) {
             System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
             for (int i = 0; i < contactLintLength; i++) {
                 if (current.getFirstName().toLowerCase().contains(firstName.toLowerCase())) {
-                    System.out.print("Index = " + (i + 1) + " ");
-                    System.out.println(current + "\n");
+                    System.out.println((i + 1) + " match found!");
+                    System.out.print("-------- * -------- * -------- * --------");
+                    System.out.println(current);
+                    //current = current.getNext();
+                    System.out.println("-------- * -------- * -------- * --------");
                     empty = false;
                 }
                 // go to the next node
@@ -139,16 +143,24 @@ public class ContactsList implements Serializable {
     /*
      *   method to delete contact by using index concept
      */
+    public void displayContactsName() {
+        Person current = head;
+        System.out.println("Here are all your contacts:");
+        for (int i = 0; i < contactLintLength; i++) {
+            System.out.println((i + 1) + ". " + current.getFirstName() + " " + current.getLastName());
+            current = current.getNext();
+        }
+    }
+
     public void deleteFromContactsList(int index) {
         Person current = head;
         Person previous = null;
         boolean empty = true;
-
         if (isEmpty()) {
             System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
             for (int i = 0; i < contactLintLength; i++) {
-                if ((index - 1) == 1) {
+                if ((index - 1) == i) {
                     if (previous == null) {
                         head = head.getNext();
                         contactLintLength--;
@@ -176,7 +188,7 @@ public class ContactsList implements Serializable {
                 /*
                  * Notification of Successfully deletion of Contacts
                  */
-                System.out.println("contact deleted from list!");
+                System.out.println(current.getFirstName() + " " + current.getLastName() + "'s contact deleted from list!");
             }
         }
     }
