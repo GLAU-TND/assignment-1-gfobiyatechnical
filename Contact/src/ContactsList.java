@@ -85,4 +85,9 @@ public class ContactsList implements Serializable {
 
     }
 
+    //method to delete contact by index
+    public void deleteFromContactsList(int index) {
+
+    }
+
 }
