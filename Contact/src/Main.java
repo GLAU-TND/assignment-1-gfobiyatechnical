@@ -7,10 +7,14 @@ import java.util.Scanner;
 @SuppressWarnings("serial")
 public class Main implements Serializable {
 
+
     public static void main(String[] args) {
         Main mObj = new Main();
         Person pObj = new Person();
+        ContactsList newList = new ContactsList();
         int userPressed = 0;
+        String option;
+        boolean bye = false;
         Scanner scan = new Scanner(System.in);
         do {
             System.out.println("Welcome to Rakesh's Contact List App\n" +
@@ -26,6 +30,7 @@ public class Main implements Serializable {
             }
             switch (userPressed) {
                 case 1:
+
 
                     break;
                 case 2:
