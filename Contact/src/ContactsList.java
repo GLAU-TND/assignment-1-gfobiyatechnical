@@ -124,5 +124,11 @@ public class ContactsList implements Serializable {
                 System.out.println("contact deleted from list!");
             }
         }
-        }
     }
+
+    // method to exit or terminate the programme
+    public void exitProgramme() {
+        System.out.println("Your Programme Got Terminated Successfully");
+    }
+}
+
