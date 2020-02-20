@@ -94,8 +94,35 @@ public class ContactsList implements Serializable {
         if (isEmpty()) {
             System.out.println("Contact List is Empty");
         } else {
-
+            for (int i = 0; i < contactLintLength; i++) {
+                if ((index - 1) == 1) {
+                    if (previous == null) {
+                        head = head.getNext();
+                        contactLintLength--;
+                        empty = false;
+                        break;
+                    } else if (current.getNext() == null) {
+                        previous.setNext(null);
+                        contactLintLength--;
+                        empty = false;
+                        break;
+                    } else {
+                        previous.setNext(current.getNext());
+                        contactLintLength--;
+                        empty = false;
+                        break;
+                    }
+                } else {
+                    previous = current;
+                    current = current.getNext();
+                }
+            }
+            if (empty) {
+                System.out.println("Contact Not Found");
+            } else {
+                //notification of deletion of Contact
+                System.out.println("contact deleted from list!");
+            }
+        }
         }
     }
-
-}
