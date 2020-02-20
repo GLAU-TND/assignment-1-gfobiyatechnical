@@ -9,8 +9,8 @@ public class Main implements Serializable {
 
 
     public static void main(String[] args) {
-        Main mObj = new Main();
-        Person pObj = new Person();
+        Main mainObj = new Main();
+        Person personObject = new Person();
         ContactsList newList = new ContactsList();
         int userPressed = 0;
         String option;
@@ -46,7 +46,6 @@ public class Main implements Serializable {
                         System.out.print(anotherNumber = "Contact Number: ");
                         anotherNumber += scan.next();
                     } else anotherNumber = null;
-
                     System.out.print("Would you like to add email address? (y/n): ");
                     option = scan.next();
                     if (option.equalsIgnoreCase("y")) {
@@ -57,7 +56,8 @@ public class Main implements Serializable {
                     newList.addInContactsLast(firstName, lastName, contactNumber, anotherNumber, EmailId, null);
                     break;
                 case 2:
-
+                    System.out.println("---Here are all your contacts---");
+                    newList.printContactsList();
                     break;
                 case 3:
 
@@ -66,12 +66,12 @@ public class Main implements Serializable {
 
                     break;
                 case 5:
-
+                    System.out.println("Exiting!");
+                    bye = true;
                     break;
-
                 default:
                     System.out.println("Unknown Entry ..");
             }
-        } while (!true);
+        } while (!bye);
     }
 }
