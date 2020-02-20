@@ -87,7 +87,15 @@ public class ContactsList implements Serializable {
 
     //method to delete contact by index
     public void deleteFromContactsList(int index) {
+        Person current = head;
+        Person previous = null;
+        boolean empty = true;
 
+        if (isEmpty()) {
+            System.out.println("Contact List is Empty");
+        } else {
+
+        }
     }
 
 }
