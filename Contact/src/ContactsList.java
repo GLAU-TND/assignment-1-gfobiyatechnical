@@ -21,7 +21,9 @@ public class ContactsList implements Serializable {
         Person previous = null;
         Person newNode = new Person();
 
-        // set the data
+        /*
+         setting the data
+         */
         newNode.setFirstName(firstName);
         newNode.setLastName(lastName);
         newNode.setContactNumber(contactNumber);
@@ -33,14 +35,19 @@ public class ContactsList implements Serializable {
             contactLintLength++;
         } else {
 
-            // compare First Name of entries for priority by first letter in First Name
+            /*
+             compare firstName of entries for priority by first letter in firstName
+             */
             for (int i = 0; i < contactLintLength; i++) {
                 String[] ourNames1 = current.getFirstName().split(" ");
                 String[] ourNames2 = newNode.getFirstName().split(" ");
 
                 int result = ourNames1[ourNames1.length - 1].compareToIgnoreCase(ourNames2[ourNames2.length - 1]);
 
-                // if First Name entered goes before what's stored in the head, new entry becomes the head
+                /*
+                 *  if First Name entered goes before what's stored in the head,
+                 *  new entry becomes the head
+                 */
                 if (result > 0) {
                     if (previous == null) {
                         newNode.setNext(current);
@@ -166,7 +173,9 @@ public class ContactsList implements Serializable {
             if (empty) {
                 System.out.println("Contact Not Found");
             } else {
-                //notification of deletion
+                /*
+                 * Notification of Successfully deletion of Contacts
+                 */
                 System.out.println("contact deleted from list!");
             }
         }

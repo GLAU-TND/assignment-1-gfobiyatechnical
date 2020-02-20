@@ -2,7 +2,6 @@ import java.io.Serializable;
 /**
  * @Author : Rakesh Yadav
  **/
-
 /**
  * create serialization so files can be written and read in byte form
  * @SuppressWarnings() - to ignore specified compiler warning in annotated element
@@ -17,12 +16,16 @@ class Person implements Serializable {
     private String e_mailAddress;
     private Person next;
 
-    // create instance of Person and set next to 'null'
+    /*
+     *create instance of Person and set next to 'null'
+     */
     public Person() {
         next = null;
     }
 
-    // getter and setter methods of firstName , lastName , contactNumber , anotherContactNumber , emailAddress and anotherE_mailAddress
+    /*
+     *getter and setter methods of firstName , lastName , contactNumber , anotherContactNumber , emailAddress and anotherE_mailAddress
+     */
     public String getFirstName() {
         return firstName;
     }
@@ -71,7 +74,9 @@ class Person implements Serializable {
         this.next = next;
     }
 
-    // toString method @Override
+    /*
+     *  toString method @Override
+     */
     public String toString() {
         return "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nContact Number: " + contactNumber + " , " + anotherContactNumber + "\nEmail Address: " + e_mailAddress;
     }
