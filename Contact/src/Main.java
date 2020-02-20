@@ -30,8 +30,31 @@ public class Main implements Serializable {
             }
             switch (userPressed) {
                 case 1:
+                    System.out.println("You have chosen to add a new contact: \n" +
+                            "Please enter the name of the Person");
+                    String firstName, lastName, contactNumber, anotherNumber, EmailId;
 
+                    System.out.print(firstName = "First Name: ");
+                    firstName += scan.next();
+                    System.out.print(lastName = "Last Name: ");
+                    lastName += scan.next();
+                    System.out.print(contactNumber = "Contact Number: ");
+                    contactNumber += scan.next();
+                    System.out.print("Would you like to add another contact number? (y/n): ");
+                    option = scan.next();
+                    if (option.equalsIgnoreCase("y")) {
+                        System.out.print(anotherNumber = "Contact Number: ");
+                        anotherNumber += scan.next();
+                    } else anotherNumber = null;
 
+                    System.out.print("Would you like to add email address? (y/n): ");
+                    option = scan.next();
+                    if (option.equalsIgnoreCase("y")) {
+                        System.out.print(EmailId = "Email Address: ");
+                        EmailId += scan.next();
+                    } else EmailId = null;
+                    System.out.println("\n");
+                    newList.addInContactsLast(firstName, lastName, contactNumber, anotherNumber, EmailId, null);
                     break;
                 case 2:
 
