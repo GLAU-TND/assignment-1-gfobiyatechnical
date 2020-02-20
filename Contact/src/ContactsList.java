@@ -16,7 +16,7 @@ public class ContactsList implements Serializable {
     }
 
     // method to add firstName,lastName,contactNumber,anotherContactNumber,emailAddress and anotherEmailAddress in String form
-    public void addInContactsLast(String firstName, String lastName, String contactNumber, String anotherContactNumber, String emailAddress, String anotherEmailAddress) {
+    public void addInContactsLast(String firstName, String lastName, String contactNumber, String anotherContactNumber, String emailAddress) {
         Person current = head;
         Person previous = null;
         Person newNode = new Person();
@@ -27,7 +27,6 @@ public class ContactsList implements Serializable {
         newNode.setContactNumber(contactNumber);
         newNode.setAnotherContactNumber(anotherContactNumber);
         newNode.setE_mailAddress(emailAddress);
-        newNode.setAnotherE_mailAddress(anotherEmailAddress);
 
         if (isEmpty()) {
             head = newNode;
@@ -47,14 +46,15 @@ public class ContactsList implements Serializable {
         // start at the head and check if there's anything there
         Person tempNode = head;
         if (head == null) {
-            System.out.println("The list is empty!");
+            System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
-
+            System.out.println("-------- * -------- * -------- * --------");
             for (int i = 0; i < contactLintLength; i++) {
                 System.out.print("Index = " + (i + 1) + " ");
                 System.out.println(tempNode);
                 tempNode = tempNode.getNext();
             }
+            System.out.println("-------- * -------- * -------- * --------");
         }
         System.out.println();
     }
@@ -66,12 +66,12 @@ public class ContactsList implements Serializable {
 
         // check to see if the list is empty
         if (isEmpty()) {
-            System.out.println("The list is empty!");
+            System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
             for (int i = 0; i < contactLintLength; i++) {
                 if (current.getFirstName().toLowerCase().contains(firstName.toLowerCase())) {
                     System.out.print("Index = " + (i + 1) + " ");
-                    System.out.println(current);
+                    System.out.println(current + "\n");
                     empty = false;
                 }
                 // go to the next node
@@ -92,7 +92,7 @@ public class ContactsList implements Serializable {
         boolean empty = true;
 
         if (isEmpty()) {
-            System.out.println("Contact List is Empty");
+            System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
             for (int i = 0; i < contactLintLength; i++) {
                 if ((index - 1) == 1) {
@@ -120,15 +120,10 @@ public class ContactsList implements Serializable {
             if (empty) {
                 System.out.println("Contact Not Found");
             } else {
-                //notification of deletion of Contact
+                //notification of deletion
                 System.out.println("contact deleted from list!");
             }
         }
-    }
-
-    // method to exit or terminate the programme
-    public void exitProgramme() {
-        System.out.println("Your Programme Got Terminated Successfully");
     }
 }
 

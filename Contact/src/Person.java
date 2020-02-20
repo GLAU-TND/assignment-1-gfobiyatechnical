@@ -15,7 +15,6 @@ class Person implements Serializable {
     private String contactNumber;
     private String anotherContactNumber;
     private String e_mailAddress;
-    private String anotherE_mailAddress;
     private Person next;
 
     // create instance of Person and set next to 'null'
@@ -64,14 +63,6 @@ class Person implements Serializable {
         this.e_mailAddress = e_mailAddress;
     }
 
-    public String getAnotherE_mailAddress() {
-        return anotherE_mailAddress;
-    }
-
-    public void setAnotherE_mailAddress(String anotherE_mailAddress) {
-        this.anotherE_mailAddress = anotherE_mailAddress;
-    }
-
     public Person getNext() {
         return next;
     }
@@ -82,6 +73,6 @@ class Person implements Serializable {
 
     // toString method @Override
     public String toString() {
-        return "First Name: " + firstName + "Last Name: " + lastName + "Contact Number: " + contactNumber + " " + anotherContactNumber + "Email Address: " + e_mailAddress + " " + getAnotherE_mailAddress();
+        return "\nFirst Name: " + firstName + "\nLast Name: " + lastName + "\nContact Number: " + contactNumber + " , " + anotherContactNumber + "\nEmail Address: " + e_mailAddress;
     }
 }
