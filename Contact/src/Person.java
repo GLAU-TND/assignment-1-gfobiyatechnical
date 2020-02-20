@@ -1,11 +1,11 @@
 import java.io.Serializable;
-/**
- * @Author : Rakesh Yadav
- **/
-/**
+/*
+ * @ Author : Rakesh Yadav
+ */
+/*
  * create serialization so files can be written and read in byte form
- * @SuppressWarnings() - to ignore specified compiler warning in annotated element
- **/
+ * @ SuppressWarnings() - to ignore specified compiler warning in annotated element
+ */
 @SuppressWarnings("serial")
 class Person implements Serializable {
 
@@ -42,24 +42,12 @@ class Person implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getContactNumber() {
-        return contactNumber;
-    }
-
     public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 
-    public String getAnotherContactNumber() {
-        return anotherContactNumber;
-    }
-
     public void setAnotherContactNumber(String anotherContactNumber) {
         this.anotherContactNumber = anotherContactNumber;
-    }
-
-    public String getE_mailAddress() {
-        return e_mailAddress;
     }
 
     public void setE_mailAddress(String e_mailAddress) {

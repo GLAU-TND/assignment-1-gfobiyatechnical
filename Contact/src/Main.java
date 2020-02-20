@@ -7,10 +7,8 @@ import java.util.Scanner;
 @SuppressWarnings("serial")
 public class Main implements Serializable {
 
-
     public static void main(String[] args) {
-        Main mainObj = new Main();
-        Person personObject = new Person();
+
         ContactsList newList = new ContactsList();
         int userPressed = 0;
         String option;
@@ -60,14 +58,15 @@ public class Main implements Serializable {
                     newList.printContactsList();
                     break;
                 case 3:
-                    System.out.print("Enter First Name to search : ");
+                    System.out.println("You could search for a contact from their first names:");
                     String sFirstName = scan.nextLine();
                     newList.searchByFirstName(sFirstName);
                     break;
                 case 4:
-                    System.out.print("Enter Contact Number .i.e, 1,2,3....n ");
-                    int indexAt = scan.nextInt();
-                    newList.deleteFromContactsList(indexAt);
+                    newList.displayContactsName();
+                    System.out.print("Press the number against the contact to delete it: ");
+                    int index = scan.nextInt();
+                    newList.deleteFromContactsList(index);
                     break;
                 case 5:
                     System.out.println("Exiting!");
