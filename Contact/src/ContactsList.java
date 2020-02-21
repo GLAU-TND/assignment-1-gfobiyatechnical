@@ -98,7 +98,7 @@ public class ContactsList implements Serializable {
             System.out.println("***************************************\n|    OPPss!!  The list is empty!      |\n***************************************\n");
         } else {
             for (int i = 0; i < contactLintLength; i++) {
-                System.out.println("-------- * -------- * -------- * --------");
+                System.out.print("-------- * -------- * -------- * --------");
                 //System.out.print("Contact No. " + (i + 1));
                 System.out.println(tempNode);
                 tempNode = tempNode.getNext();
